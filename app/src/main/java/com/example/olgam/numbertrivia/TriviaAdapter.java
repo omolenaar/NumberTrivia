@@ -44,17 +44,19 @@ public class TriviaAdapter extends RecyclerView.Adapter<TriviaAdapter.MyViewHold
         holder.number.setText(triviaItem.getNumber());
         holder.triviaText.setText(triviaItem.getText());
 
-        ConstraintLayout layout = holder.itemView.findViewById(R.id.cardView);
+        ConstraintLayout layout = holder.itemView.findViewById(R.id.main);
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(layout);
-        if (position  % 2 == 0) {
-            constraintSet.connect(R.id.triviaText,ConstraintSet.END,R.id.numberText,ConstraintSet.START,0);
-            constraintSet.connect(R.id.numberText,ConstraintSet.START,R.id.triviaText,ConstraintSet.END,0);
+
+        if (position  % 2 == 0)
+        {
+            constraintSet.connect(R.id.triviaText,ConstraintSet.START,R.id.guideline_left,ConstraintSet.START,0);
+            constraintSet.connect(R.id.numberText,ConstraintSet.START,R.id.parent,ConstraintSet.START,0);
+            constraintSet.applyTo(layout);
+
         } else {
-            constraintSet.connect(R.id.triviaText,ConstraintSet.START,R.id.numberText,ConstraintSet.END,0);
-            constraintSet.connect(R.id.numberText,ConstraintSet.END,R.id.triviaText,ConstraintSet.START,0);
+            constraintSet.applyTo(layout);
         }
-        constraintSet.applyTo(layout);
     }
 
     @Override

@@ -22,3 +22,4 @@ public interface NumbersApiService {
 
     Call<Trivia> getTrivia(@Path("number") int number);
 }
+

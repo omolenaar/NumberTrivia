@@ -13,40 +13,53 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/main"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:clickable="true"
         android:focusable="true"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_conversion_absoluteHeight="71dp"
-        tools:layout_conversion_absoluteWidth="368dp">
+        android:weightSum="6"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/triviaText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="8dp"
             android:padding="8dp"
-            android:text="Hello World!"
-            app:layout_constraintStart_toEndOf="@id/numberText"
-            app:layout_constraintTop_toTopOf="@+id/numberText"
- />
+            android:text="Hello World! How are you doing today I do not think it is very good vecause I have not started yet doing any work on the papers."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/numberText"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="245"
             android:textSize="40sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/triviaText"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintStart_toEndOf="@id/guideline_right"
+             />
 
- />
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="80dp" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="80dp" />
 
     </android.support.constraint.ConstraintLayout>
 

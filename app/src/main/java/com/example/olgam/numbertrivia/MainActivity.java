@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         mTriviaItems = new ArrayList<>();
-        initializeData();
+        //initializeData();
         updateUI();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 requestData();
+                updateUI();
             }
         });
     }
